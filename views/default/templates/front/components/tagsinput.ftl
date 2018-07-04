@@ -34,7 +34,7 @@
     <div class="tag-intro">{{intro}}</div>
   </div>
 </script>
-
+<!--
 <script type="text/javascript">
   var tagAutoComplete = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -68,5 +68,5 @@
       }
     }
   });
-</script>
+</script>-->
 </#macro>
