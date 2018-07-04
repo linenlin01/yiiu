@@ -1,8 +1,8 @@
-> 本项目是从 [pybbs](https://github.com/tomoya92/pybbs) fork 过来的
+> 本项目是从 [pybbs](https://github.com/yiiu-co/yiiu) fork 过来的
 > 
 > 使用说明：请保留页面底部的 *powered by yiiu.co* 感谢支持
 
-在线地址: [yiiu.co](https://yiiu.co) | [文档地址](https://yiiu-co.github.io/yiiu/#/)
+源项目在线地址: [yiiu.co](https://yiiu.co) | [文档地址](https://yiiu-co.github.io/yiiu/#/)
 
 ## 技术栈
 
@@ -10,7 +10,7 @@
 - Spring-Boot1.5.8
 - Spring-JPA
 - Freemarker
-- MySQL
+- MariaDB(MySQL)
 - Bootstrap3
 - Redis
 
@@ -31,10 +31,20 @@
 #### 写在前面
 
 1. 开发环境要在IDE里装上lombok插件，否则编译器会报错
-2. 项目去掉了session，用户登录信息都存在redis里了，所以要先装好redis，默认配置的话直接启动即可，如果不装redis项目启动不会报错，但登录状态不会存储
-3. 项目已经接入了elasticsearch，所以在启动前还要先安装一下es，版本5.6.0，下载地址：https://www.elastic.co/downloads/past-releases
 
-*数据库里的表是项目启动时自动创建的，不要再问创建表的脚本在哪了*
+	Lombok是一种Java实用工具，可以帮助开发人员消除Java的冗长，具体看lombok的官网：http://projectlombok.org/
+	安装步骤：
+　　		1).下载lombok.jar包
+		2).将lombok.jar包复制到myeclipse.ini/eclipse.ini所在文件目录
+		3).打开myeclipse.ini/eclipse.ini，在最后添加以下代码并保存：
+		　　　　-javaagent:lombok.jar
+　　		4).重启myeclipse/eclipse.
+　　		5).project==>clean 清理项目
+
+2. 项目去掉了session，用户登录信息都存在redis里了，所以要先装好redis，默认配置的话直接启动即可，如果不装redis项目启动不会报错，但登录状态不会存储(没有就不能用)
+3. 项目已经接入了elasticsearch，所以在启动前还要先安装一下es，版本5.6.10，下载地址：https://www.elastic.co/downloads/past-releases
+
+*数据库里的表是项目启动时自动创建的。见表结束后建议改回none，避免数据丢失*
 
 - 创建数据库yiiu, 字符集utf8，如果想支持emoji，就要选择utf8mb4字符集（仅限使用MySQL数据库）
 - `git clone https://github.com/yiiu-co/yiiu`
@@ -102,28 +112,6 @@ mail:
     mail.smtp.starttls.required: true
 ```
 
-## 反馈
-
-[issues](https://github.com/yiiu-co/yiiu/issues)
-
-QQ群：`419343003`
-
-*提问题的时候请将问题重现步骤描述清楚*
-
-## 其它版本
-
-- golang版：https://github.com/tomoya92/pybbs-go
-- springboot版：https://github.com/yiiu-co/yiiu
-- jfinal版：https://github.com/tomoya92/pybbs/tree/v2.3
-- ssm版：https://github.com/ehuacui/ehuacui-bbs
-
-## 贡献
-
-欢迎大家提 issues 及 pr 
-
-感谢以下朋友的pr
-
-[@beldon](https://github.com/beldon) [@Teddy-Zhu](https://github.com/Teddy-Zhu)
 
 ## License
 
