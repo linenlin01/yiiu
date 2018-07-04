@@ -18,9 +18,9 @@ public class TopicIndex implements Serializable {
 
   @Id
   private Integer id;
-  @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
+  @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word" ,type=FieldType.text)
   private String title;
-  @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
+  @Field(analyzer = "ik_max_word", searchAnalyzer = "ik_max_word" ,type=FieldType.text)
   private String content;
   private String username;
   private String tag;
